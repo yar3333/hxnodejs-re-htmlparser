@@ -1,6 +1,6 @@
 {
   "name": "re-htmlparser",
-  "version": "1.0.0",
+  "version": "3.3.0",
   "description": "Fast regex-based HTML/XML parser.",
   "main": "index.js",
   "keywords": [ "html", "xml", "parser" ],
