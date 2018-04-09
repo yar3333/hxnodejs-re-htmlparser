@@ -81,6 +81,27 @@ export class HtmlDocument extends htmlparser.HtmlNodeElement
 	constructor(str?:string, tolerant?:boolean);
 }
 
+type HtmlLexem =
+{
+	all : string;
+	allPos : number;
+	attrs : string;
+	close : string;
+	comment : string;
+	elem : string;
+	script : string;
+	scriptAttrs : string;
+	scriptText : string;
+	style : string;
+	styleAttrs : string;
+	styleText : string;
+	tagClose : string;
+	tagCloseLC : string;
+	tagEnd : string;
+	tagOpen : string;
+	tagOpenLC : string;
+}
+
 export class HtmlNodeText extends htmlparser.HtmlNode
 {
 	constructor(text:string);

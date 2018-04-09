@@ -1,3 +1,4 @@
 htmlparser.XmlAttribute
 htmlparser.XmlNode
 htmlparser.XmlNodeText
+htmlparser.HtmlLexem

@@ -4,7 +4,7 @@ package htmlparser;
 {
 	private function new() : Void;
 	private var tolerant : Bool;
-	private var matches : Array<HtmlLexem>;
+	private var matches : Array<htmlparser.HtmlLexem>;
 	private var str : String;
 	private var i : Int;
 	function parse(str:String, ?tolerant:Bool) : Array<htmlparser.HtmlNode>;
