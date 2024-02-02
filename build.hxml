@@ -1,0 +1,10 @@
+--js node_module/index.js
+--library HtmlParser
+--library jsprop
+--library codegen
+--dce full
+--macro include("htmlparser")
+#--macro CodeGen.includePrivateMembers()
+--macro CodeGen.include("htmlparser")
+--macro CodeGen.haxeExtern('re-htmlparser', '', 'library')
+--macro CodeGen.typescriptExtern('node_module/index.d.ts')

@@ -1,3 +1,3 @@
 package htmlparser;
 
-typedef XmlNodeText = HtmlNodeText;
+typedef XmlNodeText = htmlparser.HtmlNodeText;

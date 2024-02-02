@@ -1,16 +1,11 @@
 package htmlparser;
 
-@:jsRequire("re-htmlparser", "XmlBuilder") extern class XmlBuilder
-{
-	function new(?indent:String, ?newLine:String) : Void;
-	private var indent : String;
-	private var newLine : String;
-	private var cur : htmlparser.XmlNodeElement;
-	private var level : Int;
+@:jsRequire("re-htmlparser", "htmlparser.XmlBuilder") extern class XmlBuilder {
+	function new(?indent:String, ?newLine:String):Void;
 	var xml : htmlparser.XmlDocument;
-	function begin(tag:String, ?attrs:Array<{ var value : Dynamic; var name : String; }>) : htmlparser.XmlBuilder;
-	function end() : htmlparser.XmlBuilder;
-	function attr(name:String, value:Dynamic, ?defValue:Dynamic) : htmlparser.XmlBuilder;
-	function content(s:String) : htmlparser.XmlBuilder;
-	function toString() : String;
+	function begin(tag:String, ?attrs:Array<{ public var value(default, default) : Dynamic; public var name(default, default) : String; }>):htmlparser.XmlBuilder;
+	function end():htmlparser.XmlBuilder;
+	function attr(name:String, value:Dynamic, ?defValue:Dynamic):htmlparser.XmlBuilder;
+	function content(s:String):htmlparser.XmlBuilder;
+	function toString():String;
 }

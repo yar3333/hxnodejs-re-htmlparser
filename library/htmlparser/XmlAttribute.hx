@@ -1,3 +1,3 @@
 package htmlparser;
 
-typedef XmlAttribute = HtmlAttribute;
+typedef XmlAttribute = htmlparser.HtmlAttribute;
