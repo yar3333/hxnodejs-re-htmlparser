@@ -1,6 +1,6 @@
 package htmlparser;
 
-@:jsRequire("re-htmlparser", "htmlparser.CssSelector") extern class CssSelector {
+@:jsRequire("re-htmlparser", "CssSelector") extern class CssSelector {
 	var type(default, null) : String;
 	var tagNameLC(default, null) : String;
 	var id(default, null) : String;

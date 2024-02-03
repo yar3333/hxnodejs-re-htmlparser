@@ -1,6 +1,6 @@
 package htmlparser;
 
-@:jsRequire("re-htmlparser", "htmlparser.XmlBuilder") extern class XmlBuilder {
+@:jsRequire("re-htmlparser", "XmlBuilder") extern class XmlBuilder {
 	function new(?indent:String, ?newLine:String):Void;
 	var xml : htmlparser.XmlDocument;
 	function begin(tag:String, ?attrs:Array<{ public var value(default, default) : Dynamic; public var name(default, default) : String; }>):htmlparser.XmlBuilder;

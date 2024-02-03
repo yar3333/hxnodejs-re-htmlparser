@@ -1,6 +1,6 @@
 package htmlparser;
 
-@:jsRequire("re-htmlparser", "htmlparser.HtmlNode") extern class HtmlNode {
+@:jsRequire("re-htmlparser", "HtmlNode") extern class HtmlNode {
 	var parent : htmlparser.HtmlNodeElement;
 	function remove():Void;
 	function getPrevSiblingNode():htmlparser.HtmlNode;
