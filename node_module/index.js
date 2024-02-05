@@ -125,140 +125,6 @@ Lambda.indexOf = function(it,v) {
 	return -1;
 };
 Math.__name__ = true;
-var Reflect = function() { };
-Reflect.__name__ = true;
-Reflect.hasField = function(o,field) {
-	return Object.prototype.hasOwnProperty.call(o,field);
-};
-Reflect.field = function(o,field) {
-	try {
-		return o[field];
-	} catch( _g ) {
-		return null;
-	}
-};
-Reflect.setField = function(o,field,value) {
-	o[field] = value;
-};
-Reflect.getProperty = function(o,field) {
-	var tmp;
-	if(o == null) {
-		return null;
-	} else {
-		var tmp1;
-		if(o.__properties__) {
-			tmp = o.__properties__["get_" + field];
-			tmp1 = tmp;
-		} else {
-			tmp1 = false;
-		}
-		if(tmp1) {
-			return o[tmp]();
-		} else {
-			return o[field];
-		}
-	}
-};
-Reflect.setProperty = function(o,field,value) {
-	var tmp;
-	var tmp1;
-	if(o.__properties__) {
-		tmp = o.__properties__["set_" + field];
-		tmp1 = tmp;
-	} else {
-		tmp1 = false;
-	}
-	if(tmp1) {
-		o[tmp](value);
-	} else {
-		o[field] = value;
-	}
-};
-Reflect.callMethod = function(o,func,args) {
-	return func.apply(o,args);
-};
-Reflect.fields = function(o) {
-	var a = [];
-	if(o != null) {
-		var hasOwnProperty = Object.prototype.hasOwnProperty;
-		for( var f in o ) {
-		if(f != "__id__" && f != "hx__closures__" && hasOwnProperty.call(o,f)) {
-			a.push(f);
-		}
-		}
-	}
-	return a;
-};
-Reflect.isFunction = function(f) {
-	if(typeof(f) == "function") {
-		return !(f.__name__ || f.__ename__);
-	} else {
-		return false;
-	}
-};
-Reflect.compare = function(a,b) {
-	if(a == b) {
-		return 0;
-	} else if(a > b) {
-		return 1;
-	} else {
-		return -1;
-	}
-};
-Reflect.compareMethods = function(f1,f2) {
-	return f1 == f2;
-};
-Reflect.isObject = function(v) {
-	if(v == null) {
-		return false;
-	}
-	var t = typeof(v);
-	if(!(t == "string" || t == "object" && v.__enum__ == null)) {
-		if(t == "function") {
-			return (v.__name__ || v.__ename__) != null;
-		} else {
-			return false;
-		}
-	} else {
-		return true;
-	}
-};
-Reflect.isEnumValue = function(v) {
-	if(v != null) {
-		return v.__enum__ != null;
-	} else {
-		return false;
-	}
-};
-Reflect.deleteField = function(o,field) {
-	if(!Object.prototype.hasOwnProperty.call(o,field)) {
-		return false;
-	}
-	delete(o[field]);
-	return true;
-};
-Reflect.copy = function(o) {
-	if(o == null) {
-		return null;
-	}
-	var o2 = { };
-	var _g = 0;
-	var _g1 = Reflect.fields(o);
-	while(_g < _g1.length) {
-		var f = _g1[_g];
-		++_g;
-		o2[f] = Reflect.field(o,f);
-	}
-	return o2;
-};
-Reflect.makeVarArgs = function(f) {
-	return function() {
-		var a = Array.prototype.slice;
-		var a1 = arguments;
-		var a2 = a.call(a1);
-		return f(a2);
-	};
-};
 var Std = function() { };
 Std.__name__ = true;
 Std.string = function(s) {
@@ -310,7 +176,6 @@ haxe_Exception.prototype = $extend(Error.prototype,{
 	,get_native: function() {
 		return this.__nativeException;
 	}
-	,__properties__: {get_native:"get_native",get_message:"get_message"}
 });
 var haxe_ValueException = function(value,previous,native) {
 	haxe_Exception.call(this,String(value),previous,native);
@@ -1356,7 +1221,6 @@ htmlparser_HtmlParserTools.parseValue = function(value,defaultValue) {
 };
 var htmlparser_HtmlTools = $hx_exports["HtmlTools"] = function() { };
 htmlparser_HtmlTools.__name__ = true;
-htmlparser_HtmlTools.__properties__ = {get_htmlUnescapeMap:"get_htmlUnescapeMap"};
 htmlparser_HtmlTools.get_htmlUnescapeMap = function() {
 	if(htmlparser_HtmlTools.htmlUnescapeMap == null) {
 		var _g = new haxe_ds_StringMap();
@@ -1704,14 +1568,6 @@ js_Boot.__string_rec = function(o,s) {
 	default:
 		return String(o);
 	}
-};
-var js_lib_ObjectEntry = {};
-js_lib_ObjectEntry.__properties__ = {get_value:"get_value",get_key:"get_key"};
-js_lib_ObjectEntry.get_key = function(this1) {
-	return this1[0];
-};
-js_lib_ObjectEntry.get_value = function(this1) {
-	return this1[1];
 };
 function $getIterator(o) { if( o instanceof Array ) return new haxe_iterators_ArrayIterator(o); else return o.iterator(); }
 if(typeof(performance) != "undefined" ? typeof(performance.now) == "function" : false) {

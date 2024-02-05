@@ -4,7 +4,6 @@
 --library jsprop
 --library codegen
 
---macro include("htmlparser")
 --macro CodeGen.exposeToRoot("htmlparser")
 --macro CodeGen.removeTypeMeta(":build")
 
