@@ -14,7 +14,7 @@ jobs:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
       - working-directory: ./node_module
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # work for scope registry
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}	# work for npm registry
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
