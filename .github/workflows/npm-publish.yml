@@ -13,7 +13,6 @@ jobs:
         with:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
-      - name: Publish to npmjs.com
 		working-directory: ./node_module
         run: npm publish
         env:
