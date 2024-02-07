@@ -16,4 +16,5 @@ jobs:
       - working-directory: ./node_module
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # work for scope registry
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}	# work for npm registry
