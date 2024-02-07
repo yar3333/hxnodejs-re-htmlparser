@@ -5,5 +5,10 @@
   "main": "index.js",
   "keywords": [ "html", "xml", "parser" ],
   "author": "yar3333",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "github.com:yar3333/hxnodejs-re-htmlparser"
+  },
+  "homepage": "https://github.com/yar3333/hxnodejs-re-htmlparser"
 }
